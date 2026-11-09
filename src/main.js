@@ -2342,7 +2342,7 @@ const VIEWS={
   estairs:{p:[exc+0.9,EF+1.15,FZ+3.0],t:[exc-0.1,EF+0.25,FZ+0.2],facade:1},outside:{p:[exc+0.6,EF+1.8,17.0],t:[exc,EF+2.6,9.6],facade:1},
   street:{p:[exc,1.1,25.5],t:[exc,2.6,6.0],facade:1},
   street2:{p:[exc-7.5,1.0,21.5],t:[exc,2.4,6.0],facade:1},
-  hof:{p:[2.8,CF+1.9,-10.5],t:[2.6,CF+1.5,0],facade:1},garage:{p:[6.75,CF+1.6,NF+0.6],t:[6.75,CF+0.7,NF+4.9],fl:-1,facade:1},hofstairs:{p:[-1.2,CF+1.75,NF-3.4],t:[-3.9,CF+0.6,NF+0.4],facade:1},
+  hof:{p:[2.8,CF+1.9,-10.5],t:[2.6,CF+1.5,0],facade:1},garage:{p:[6.75,CF+1.6,NF+0.6],t:[6.75,CF+0.7,NF+4.9],fl:-1,facade:1},garageDoor:{p:[6.4,CF+1.6,2.78],t:[4.5,CF+1.2,2.78],fl:-1,facade:1},hofstairs:{p:[-1.2,CF+1.75,NF-3.4],t:[-3.9,CF+0.6,NF+0.4],facade:1},
   garden:{p:[4.0,CF+1.2,-22.0],t:[4.0,1.4,3.0],facade:1},
   terraceside:{p:[-16,0.6,-6.0],t:[1.5,2.8,3.5],facade:1},
   stairup:{p:[4.35,1.6,4.0],t:[3.5,1.6,8.6]},
