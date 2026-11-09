@@ -1,0 +1,21 @@
+// Fotos/Bilder des Modells. Im Build (build.py) werden sie als Base64 eingebettet.
+window.ART={
+  rooster1:"assets/art/rooster1.jpg",
+  rooster2:"assets/art/rooster2.jpg",
+  kids_east:"assets/art/kids_east.jpg",
+  portrait_tv:"assets/art/portrait_tv.jpg",
+  rainbow:"assets/art/rainbow.jpg",
+  girl:"assets/art/girl.jpg",
+  kids_west:"assets/art/kids_west.jpg",
+  calendar:"assets/art/calendar.jpg",
+  winsq:"assets/art/winsq.jpg",
+  h1:"assets/art/h1.png",
+  h2:"assets/art/h2.png",
+  h3:"assets/art/h3.png",
+  pinboard:"assets/art/pinboard.jpg",
+  leaves:"assets/art/leaves.jpg",
+  wreath:"assets/art/wreath.jpg",
+  flower:"assets/art/flower.png",
+  chest:"assets/art/chest.jpg",
+  wingheart:"assets/art/wingheart.jpg",
+};

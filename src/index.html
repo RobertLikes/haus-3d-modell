@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wohnzimmer Walluf in 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <div class="head">
+    <h1>Wohnzimmer Walluf</h1>
+    <p>Erdgeschoss Mühlstraße</p>
+  </div>
+  <div class="settools" id="setTools" hidden><span>Esstisch</span><button id="rotL" aria-label="15 Grad nach links drehen">⟲ 15°</button><button id="rotR" aria-label="15 Grad nach rechts drehen">⟳ 15°</button><button id="setDone">Fertig</button></div>
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <div class="hint"><b>Maus</b>: links ziehen = drehen, rechts ziehen = verschieben, Rad = zoomen. <b>Touch</b>: 1 Finger = drehen, 2 Finger = zoomen/verschieben. <b>Doppelklick / Doppeltipp</b>: in einen Raum wechseln oder dorthin gehen, auf einer Treppe hoch bzw. runter. Einfacher Klick öffnet Türen, Fenster, Rollläden, Schränke und Geräte.</div>
+  <nav class="dock" aria-label="Ansicht und Optionen">
+    <button id="viewBtn" class="viewbtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="viewSheet"><span class="vk">Ansicht</span><span id="viewName">Überblick</span><span class="chev" aria-hidden="true">▴</span></button>
+    <div class="seg" role="group" aria-label="Etage"><button data-floor="kg" aria-pressed="false">KG</button><button data-floor="eg" aria-pressed="true">EG</button><button data-floor="og" aria-pressed="false">OG</button><button data-floor="dg" aria-pressed="false">DG</button></div>
+    <div class="tog">
+      <button id="dims" aria-pressed="false">Maße</button>
+      <button id="walls" aria-pressed="false">Wände aus</button>
+      <button id="deco" aria-pressed="false">Deko aus</button><button id="furn" aria-pressed="false">Möbel aus</button>
+      <button id="evening" aria-pressed="false">Abend</button>
+    </div>
+    <div class="vh-sr"><select id="viewSel" aria-label="Ansicht wählen">
+        <optgroup label="Haus">
+          <option value="overview" selected>Überblick</option>
+          <option value="top">Draufsicht</option>
+          <option value="outside">Hauseingang von außen</option>
+          <option value="estairs">Eingangstreppe</option>
+          <option value="street">Haus von der Straße</option>
+          <option value="street2">Straße schräg von links</option>
+          <option value="garden">Haus von der Gartenseite</option>
+          <option value="terraceside">Haus von der Terrassenseite</option>
+          <option value="hof">Hof mit Garage und Kellertür</option>
+          <option value="hofstairs">Hof: Treppe zur Gartenterrasse</option>
+          <option value="garage">Garage innen</option>
+        </optgroup>
+        <optgroup label="Erdgeschoss">
+          <option value="slide">Wohnzimmer: von der Schiebetür</option>
+          <option value="entry">Wohnzimmer: vom Eingang</option>
+          <option value="kapok">Wohnzimmer: von den Kapoks</option>
+          <option value="dining">Esszimmer</option>
+          <option value="hall">Flur</option>
+          <option value="stairs">Flur von der Treppe</option>
+          <option value="stairup">Holztreppe ins 1. OG</option>
+          <option value="stairdown">Blick die Treppe hinab zum Podest</option>
+          <option value="landing">Treppenpodest: Treppe ins OG</option>
+          <option value="landwin">Treppenpodest: Seitenfenster</option>
+          <option value="entrance">Treppe zum Hauseingang</option>
+          <option value="vcorr">Windfang mit Garderobe</option>
+          <option value="vcloset">Garderobe hinter dem Vorhang</option>
+          <option value="kitchen">Küche</option>
+          <option value="bath">Bad</option>
+          <option value="bedroom">Schlafzimmer</option>
+        </optgroup>
+        <optgroup label="Obergeschoss">
+          <option value="ogover">Obergeschoss Überblick</option>
+          <option value="ogstair">Treppenhaus: Rundfenster und Dachbodentreppe</option>
+          <option value="abstell">Abstellbereich unter der Dachbodentreppe</option>
+          <option value="ogdoor">Flur: Tür zu Janinas Zimmer</option>
+          <option value="janina">Janinas Zimmer (von der Tür)</option>
+          <option value="janina2">Janinas Zimmer (Hochbett-Seite)</option>
+          <option value="janina3">Janinas Zimmer (vom Hochbett)</option>
+          <option value="wichtel">Wichtelzimmer (von der Tür)</option>
+          <option value="wichtel2">Wichtelzimmer: Etagenbett</option>
+          <option value="wichtel3">Wichtelzimmer: Kleiderschrank</option>
+          <option value="lese1">Lesezimmer (von der Tür)</option>
+          <option value="lese2">Lesezimmer: Bücherregale</option>
+          <option value="bastel1">Bastelzimmer (Wintergarten)</option>
+          <option value="bastel2">Bastelzimmer: Basteltisch</option>
+          <option value="aupair1">Au-pair-Zimmer (von der Tür)</option>
+          <option value="aupair2">Au-pair-Zimmer: Kleiderschrank und Fenster</option>
+          <option value="bathog">Bad oben (von der Tür)</option>
+          <option value="bathog2">Bad oben: Wanne und Tür</option>
+          <option value="wcz">WC auf der Zwischentreppe</option>
+        </optgroup>
+        <optgroup label="Dachgeschoss">
+          <option value="dgover">Dachgeschoss Überblick</option>
+          <option value="dgtop">Oben an der Treppe: Halbrundfenster</option>
+          <option value="dgflur">Flur mit Türen</option>
+          <option value="yoga">Yogazimmer (vom Bett)</option>
+          <option value="yoga2">Yogazimmer (von der Tür)</option>
+          <option value="dgbath">Bad: Toilette und Tür</option>
+          <option value="dgbath2">Bad: Wanne und Waschbecken</option>
+          <option value="dgstore">Abstellkammer</option>
+        </optgroup>
+        <optgroup label="Keller">
+          <option value="cellar">Treppe zum Keller</option>
+          <option value="kroom">Bogenzimmer</option>
+          <option value="kroom2">Bogenzimmer: Nischen und Lamellentüren</option>
+          <option value="kcab">Wandschrank am Fuß der Kellertreppe</option>
+          <option value="kbuero">Kellerbüro</option>
+          <option value="kbuero2">Kellerbüro: Glastür und Hoffenster</option>
+          <option value="kvest">Waschküche</option>
+          <option value="kvest2">Waschküche: Heizung</option>
+          <option value="kcorr">Flur zu WC und Vorrat</option>
+          <option value="kwc">WC</option>
+          <option value="kpantry">Vorratsraum</option>
+          <option value="kcrawl">Kriechkeller</option>
+          <option value="kcrawl2">Kriechkeller: Wasseranschluss</option>
+        </optgroup>
+      </select>
+      <select id="floorSel" aria-label="Etage wählen"><option value="kg">Keller</option><option value="eg" selected>Erdgeschoss</option><option value="og">Obergeschoss</option><option value="dg">Dachgeschoss</option></select>
+    </div>
+  </nav>
+  <div class="sheet" id="viewSheet" role="dialog" aria-label="Ansicht wählen" hidden>
+    <div class="sheet-head"><strong>Ansicht wählen</strong><button id="sheetClose" aria-label="Schließen">✕</button></div>
+    <div class="tabs" role="tablist" id="sheetTabs"></div>
+    <div class="grid" id="sheetGrid"></div>
+  </div>
+  <div class="err" id="err">Das 3D-Modell konnte nicht geladen werden. Bitte Seite neu laden.</div>
+</div>
+
+<script src="art.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
