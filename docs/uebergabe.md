@@ -26,6 +26,8 @@ Kellertreppe, Garage (Sektionaltor per Klick).
 5. Kleinigkeiten: dunkle Fläche oben an der linken Gartentreppe glätten; EG/OG-Fenster der Gartenseite
    (dreiteiliges Esszimmerfenster, Wintergarten 3×3-Sprossen, Putzband) mit Fotos abgleichen;
    Maße Kriechkeller/Garage nachmessen.
+6. Verbindungstür Waschküche–Garage: im Modell nach Fotos mit ca. 0,85 × 2,05 m angesetzt;
+  Position und tatsächliche Maße vor Ort bestätigen.
 
 ## Historie
 - v30–v82: Einzeldateien in `C:\Users\rober\Documents\Grundriss-Versionen`.
