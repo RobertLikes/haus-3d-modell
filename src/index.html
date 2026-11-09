@@ -24,8 +24,19 @@
     <div class="tog">
       <button id="dims" aria-pressed="false">Maße</button>
       <button id="walls" aria-pressed="false">Wände aus</button>
+      <button id="wallColorBtn" aria-expanded="false" aria-controls="wallColorTools">Wandfarbe</button>
       <button id="deco" aria-pressed="false">Deko aus</button><button id="furn" aria-pressed="false">Möbel aus</button>
       <button id="evening" aria-pressed="false">Abend</button>
+    </div>
+    <div class="walltools" id="wallColorTools" role="group" aria-label="Wandfarbe" hidden>
+      <button id="wallPaintMode" class="paint-mode" type="button" aria-pressed="false">Streichen</button>
+      <button class="wall-swatch" type="button" data-wall-color="#F3F0EA" aria-label="Warmweiß" title="Warmweiß" aria-pressed="true" style="--swatch:#F3F0EA"></button>
+      <button class="wall-swatch" type="button" data-wall-color="#FFFFFF" aria-label="Reinweiß" title="Reinweiß" aria-pressed="false" style="--swatch:#FFFFFF"></button>
+      <button class="wall-swatch" type="button" data-wall-color="#D8E6D5" aria-label="Salbei" title="Salbei" aria-pressed="false" style="--swatch:#D8E6D5"></button>
+      <button class="wall-swatch" type="button" data-wall-color="#C9DDE8" aria-label="Nebelblau" title="Nebelblau" aria-pressed="false" style="--swatch:#C9DDE8"></button>
+      <button class="wall-swatch" type="button" data-wall-color="#E8D0C2" aria-label="Altrosa" title="Altrosa" aria-pressed="false" style="--swatch:#E8D0C2"></button>
+      <button class="wall-swatch" type="button" data-wall-color="#D7C8AA" aria-label="Leinen" title="Leinen" aria-pressed="false" style="--swatch:#D7C8AA"></button>
+      <input id="wallColorInput" type="color" value="#f3f0ea" aria-label="Eigene Wandfarbe" title="Eigene Wandfarbe">
     </div>
     <div class="vh-sr"><select id="viewSel" aria-label="Ansicht wählen">
         <optgroup label="Haus">
